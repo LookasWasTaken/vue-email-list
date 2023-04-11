@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  margin: 2rem 0.5rem;
+  text-align: center;
+}
+
+.error {
+  color: #ff0000;
+}
+
+ul {
+  margin-top: 2rem;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- EXTERNAL FONTAWESOME CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- EXTERNAL PERSONAL CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
+    <title>Mail Generator</title>
+  </head>
+  
+  <body>
+    
+    <div id="app">
+
+      <h1>Mail Generator</h1>
+      <h3>E-mails to generate: {{mailsToGenerate}}</h3>
+
+      <div v-if="errorPresent">
+        <h2 class="error">Something went wrong</h2>
+      </div>
+
+      <div v-else-if="!generationComplete">
+        <h2>Generating {{mailsToGenerate}} mails</h2>
+        <h2><i class="fa-solid fa-spinner fa-spin"></i></h2>
+      </div>
+      
+      <ul v-else>
+        <li v-for="mail in generatedMails">
+          <h2>{{mail}}</h2>
+        </li>
+      </ul>
+      
+    </div>
+    <!-- /#app -->
+
+    <!-- EXTERNAL AXIOS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <!-- EXTERNAL VUE JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.global.min.js"></script>
+    
+    <!-- EXTERNAL PERSONAL JS -->
+    <script src="./assets/js/app.js"></script>
+    
+  </body>
+  
+</html>
